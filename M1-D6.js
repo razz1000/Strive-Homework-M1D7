@@ -102,6 +102,13 @@ dice(); // it prints a random number each time in the Console.log
     Write a function called whoIsBigger which receives 2 numbers as parameters and returns the biggest one.
 */
 
+
+/* EXERCISE 3
+    Write a function called splitMe which receives a string as a parameter and returns an array with every word in that string.
+    Ex.: splitMe("I love coding") => returns ["I", "Love", "Coding"]
+*/
+
+
 let splitMe = (str) => {
   return str.split(' ');
 }
@@ -109,9 +116,10 @@ let splitMe = (str) => {
 splitMe("Hi there my name is Rasmus") // prints out :  ['Hi', 'there', 'my', 'name', 'is', 'Rasmus']
 
 
-/* EXERCISE 3
-    Write a function called splitMe which receives a string as a parameter and returns an array with every word in that string.
-    Ex.: splitMe("I love coding") => returns ["I", "Love", "Coding"]
+
+/* EXERCISE 4
+    Write a function called deleteOne which receives a string and a boolean as parameters.
+    If the boolean value is true it should return the string without the first letter, otherwise it should remove the last one from it.
 */
 
 let deleteOne = (str, something) => {
@@ -126,23 +134,18 @@ deleteOne("awesomeness");
 
 
 
-
-/* EXERCISE 4
-    Write a function called deleteOne which receives a string and a boolean as parameters.
-    If the boolean value is true it should return the string without the first letter, otherwise it should remove the last one from it.
-*/
-
-let deleteOne= () => {
-  
-}
-
-
-
-
 /* EXERCISE 5
    Write a function called onlyLetters which receives a string as a parameter and returns it removing all the digits.
    Ex.: onlyLetters("I have 4 dogs") => returns "I have  dogs"
 */
+
+let onlyLetters = (string) => {
+  return string.replace(/[0-9]/g, '');
+
+}
+
+console.log(onlyLetters("hi i am 56 years old"));
+
 
 /* EXERCISE 6
    Write a function called isThisAnEmail which receives a string as a parameter and returns true if the string is a valid email address.
