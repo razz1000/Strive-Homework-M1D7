@@ -151,9 +151,24 @@ console.log(onlyLetters("hi i am 56 years old"));
    Write a function called isThisAnEmail which receives a string as a parameter and returns true if the string is a valid email address.
 */
 
+let isThisAnEmail = (string2) => {
+  if (string2.indexOf("@")> -1) {
+    alert("Yep, " + string2 + " this is a validemail address")
+  }
+}
+/* 
+isThisAnEmail("rasmusra@smus.dk")
+ */
+
 /* EXERCISE 7
    Write a function called whatDayIsIt that should return the current day of the week.
 */
+
+const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+const d = new Date();
+let day = weekday[d.getDay()];
+console.log(day);
 
 /* EXERCISE 8
     Write a function called rollTheDices which receives a number as a parameter.
@@ -166,13 +181,37 @@ console.log(onlyLetters("hi i am 56 years old"));
     }
 */
 
+
+
 /* EXERCISE 9
    Write a function called howManyDays which receives a date as a parameter and returns the number of days passed since that date.
 */
 
+
+function days_passed(dt) {
+  let current = new Date(dt.getTime());
+  let previous = new Date(dt.getFullYear(), 0, 1);
+
+  return Math.ceil((current - previous + 1) / 86400000);
+}
+console.log(days_passed(new Date(2015, 0, 15)));
+console.log(days_passed(new Date(2015, 11, 14)));
+
+
+
 /* EXERCISE 10
    Write a function called isTodayMyBirthday which should return true if today's your birthday, false otherwise.
 */
+
+let isTodayMyBirthday = (date2) => {
+  if (date2 === "11 September") {
+    return true 
+  } else {
+    return false
+  }
+}
+
+console.log(isTodayMyBirthday("11 September"));
 
 // JS Arrays & Objects
 // NOTE: the movies array used in some exercises is defined at the end of this file
@@ -182,17 +221,61 @@ console.log(onlyLetters("hi i am 56 years old"));
    and returns the given object after deleting its property named as the given string.
 */
 
+let deleteProp = () => {
+
+}
+
+
 /* EXERCISE 12
     Write a function called oldestMovie which finds the oldest movie in the provided movies array.
 */
+
+const findTheOldest = function(movies) {
+  let oldest = {};
+  let oldestAge = 0;
+  for (let i = 0; i < movies.length; i++) {
+    let age = movies[i].Year[i]
+    if( age >= oldestAge) {
+       oldestAge = age;
+       oldest = movies[i].Year[i];
+    }
+  }
+  return oldest;
+}
+
+/* 
+console.log(findTheOldest(movies)); // Prints 5 - which is the oldest movie. 
+ */
 
 /* EXERCISE 13
     Write a function called countMovies which returns the number of movies contained in the provided movies array.
 */
 
+let countMovies = (movies) => {
+  for (let i = 0; i < movies.length; i++) {
+    return Object.keys(movies).length;
+  }
+}
+/* 
+console.log(countMovies(movies)); Prints 14. 
+ */
+
 /* EXERCISE 14
     Write a function called onlyTheTitles which creates an array with just the titles of the movies contained in the provided movies array.
 */
+
+let titlesOnly = []
+let onlyTheTitles = () => {
+  for (let i = 0; i < movies.length; i++) {
+    return titlesOnly.push(movies[i].Title)
+  }
+}
+console.log(onlyTheTitles(titlesOnly));
+
+
+
+
+
 
 /* EXERCISE 15
    Write a function called onlyInThisMillennium which returns only the movies produced in this millennium from the provided movies array.
@@ -363,3 +446,4 @@ const movies = [
       "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg",
   },
 ];
+
