@@ -15,43 +15,117 @@ ASSIGNMENT RULES
    Create a variable called test and assign a string value to it.
 */
 
+let test = "Peter";
+
 /* EXERCISE B
     Create a variable called sum and assign to it the result of the sum between the numbers 10 and 20.
 */
+
+let sum = 10 + 20;
+console.log(sum);
 
 /* EXERCISE C
     Create a variable called random and assign to it a random number between 0 and 20 (it should be randomly created at each execution).
 */
 
+let random = Math.floor(Math.random() * 20);
+
+console.log(random);
+
+
 /* EXERCISE D
     Create a variable called me and assign to it an object containing the following information: name = your name, surname = your surname, age = your age.
 */
+
+let me = {
+  name: "rasmus",
+  surname: "sorensen",
+  age: 99,
+  }
+
+  console.log(me);
+
+
 
 /* EXERCISE E
     Write a piece of code for programmatically removing the age property from the previously create object.
 */
 
+let removeAge = () => {
+  delete me.age
+}
+
+removeAge();
+
 /* EXERCISE F
    Write a piece of code for programmatically adding to the me object you defined before an array called skills, containing the programming languages you know right now.
 */
 
+let me2 = {
+  name: "rasmus",
+  surname: "sorensen",
+  age: 99,
+  }
+
+let rasmusSkills = ["HTML", "CSS", "JavaScript"];
+ 
+me2.skills = [];
+me2.skills.push(rasmusSkills);
+console.log(me2);
+
+
 /* EXERCISE G
    Write a piece of code for programmatically removing the last skill from the skills array inside the me object.
 */
+
+
+let removeLastInStringonObject = () => {
+  me2.skills[0].pop();
+}
+
+removeLastInStringonObject();
+
+console.log(me2);
 
 // JS Functions
 /* EXERCISE 1
     Write a function called dice; it should randomize an integer number between 1 and 6.
 */
 
+let dice = () => {
+  let theRandomNumber = Math.floor(Math.random() * 6) + 1;
+  console.log(theRandomNumber)
+}
+dice(); // it prints a random number each time in the Console.log 
+
 /* EXERCISE 2
     Write a function called whoIsBigger which receives 2 numbers as parameters and returns the biggest one.
 */
+
+let splitMe = (str) => {
+  return str.split(' ');
+}
+
+splitMe("Hi there my name is Rasmus") // prints out :  ['Hi', 'there', 'my', 'name', 'is', 'Rasmus']
+
 
 /* EXERCISE 3
     Write a function called splitMe which receives a string as a parameter and returns an array with every word in that string.
     Ex.: splitMe("I love coding") => returns ["I", "Love", "Coding"]
 */
+
+let deleteOne = (str, something) => {
+  if (str === something) {
+    return str.substring(1);
+  } else { 
+    return str.substring(0, str.length - 1);
+
+  }
+}
+deleteOne("awesomeness");
+
+
+
 
 /* EXERCISE 4
     Write a function called deleteOne which receives a string and a boolean as parameters.
